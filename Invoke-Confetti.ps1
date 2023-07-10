@@ -61,8 +61,9 @@ Function Close-WPFWindow {
     },
     "Normal")
 }
-
-Start-Sleep -Seconds 1
+while(!($syncHash.VideoPlayer)){
+    Start-Sleep -Milliseconds 250
+}
 Register-ObjectEvent -InputObject ($syncHash.VideoPlayer) -EventName "MediaEnded" -Action {
     $Event.MessageData.playing = $false
 } -MessageData $syncHash
