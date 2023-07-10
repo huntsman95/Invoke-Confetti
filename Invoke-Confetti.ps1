@@ -65,7 +65,7 @@ Function Close-WPFWindow {
 while(!($syncHash.VideoPlayer)){
     Start-Sleep -Milliseconds 250
 }
-Register-ObjectEvent -InputObject ($syncHash.VideoPlayer) -EventName "MediaEnded" -Action {
+$eventSubscription = Register-ObjectEvent -InputObject ($syncHash.VideoPlayer) -EventName "MediaEnded" -Action {
     $Event.MessageData.playing = $false
 } -MessageData $syncHash
 
@@ -73,3 +73,5 @@ while($syncHash.playing){
 Start-Sleep -Milliseconds 250
 }
 Close-WPFWindow
+
+Unregister-Event ($eventSubscription.Name) # Clean-up
