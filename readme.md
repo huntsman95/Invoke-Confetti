@@ -17,3 +17,5 @@ Run the script `Invoke-Confetti.ps1` with optional parameter `-LabelText` to cus
 ```powershell
 & "C:\path\to\Invoke-Confetti.ps1" -LabelText "Congrats! This is a terrible idea!"
 ```
+## Demo
+![example](example.gif)

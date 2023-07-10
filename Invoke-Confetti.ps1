@@ -1,4 +1,5 @@
-﻿[CmdletBinding()]
+﻿function Invoke-Confetti {
+[CmdletBinding()]
 param (
     [Parameter()]
     [string]
@@ -75,3 +76,4 @@ Start-Sleep -Milliseconds 250
 Close-WPFWindow
 
 Unregister-Event ($eventSubscription.Name) # Clean-up
+}
