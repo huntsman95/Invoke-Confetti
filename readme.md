@@ -11,7 +11,7 @@ https://www.reddit.com/r/sysadmin/comments/14vfv7e/ceo_wants_computers_to_explod
 
 Run the script `Invoke-Confetti.ps1` with optional parameter `-LabelText` to customize the message shown to the end-user.
 
->> Note: ensure the script AND the video file are in the same directory.
+> **Note:** ensure the script AND the video file are in the same directory.
 
 ## Example
 ```powershell

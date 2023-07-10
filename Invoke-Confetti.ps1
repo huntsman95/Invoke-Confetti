@@ -37,8 +37,9 @@ $psCmd = [PowerShell]::Create().AddScript({
 #Devide All Objects on XAML
 $XAMLReader=(New-Object System.Xml.XmlNodeReader $XAML)
 $syncHash.Window=[Windows.Markup.XamlReader]::Load( $XAMLReader )
+$syncHash.Window.Topmost = $true
 $syncHash.VideoPlayer = $syncHash.Window.FindName("VideoPlayer")
- 
+
 #Video Default Setting
 $syncHash.VideoPlayer.Volume = 100;
 $syncHash.VideoPlayer.Source = $syncHash.VideoSource;
